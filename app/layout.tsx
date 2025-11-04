@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import PrismaticBurst from "@/components/PrismaticBurst";
+import Lightning from "@/components/Lightning";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +27,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen relative`}
       >
-        {children}
+      <div className="absolute z-[-1] inset-0 top-0 w-full min-h-screen">
+          <PrismaticBurst
+              animationType="rotate3d"
+              intensity={2}
+              speed={0.5}
+              distort={1.0}
+              paused={false}
+              offset={{ x: 0, y: 0 }}
+              hoverDampness={0.25}
+              rayCount={24}
+              mixBlendMode="lighten"
+              colors={['#ff007a', '#4d3dff', '#ffffff']}
+          />
+      </div>
+      <main>{children}</main>
       </body>
     </html>
   );
