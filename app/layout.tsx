@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import PrismaticBurst from "@/components/PrismaticBurst";
 import React from "react";
+import NavBar from "@/components/NavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen relative`}
       >
+      <NavBar/>
       <div className="absolute z-[-1] inset-0 top-0 w-full min-h-screen">
           <PrismaticBurst
               animationType="rotate3d"
