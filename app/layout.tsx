@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen relative`}
       >
       <NavBar/>
-      <div className="absolute z-[-1] inset-0 top-0 w-full min-h-screen">
+      <div className="absolute z-[-1] inset-0 top-0 w-full h-32 min-h-screen">
           <PrismaticBurst
               animationType="rotate3d"
               intensity={2}
