@@ -1,11 +1,7 @@
 import React from 'react'
 import ExploreBtn from "@/components/ExploreBtn";
 import EventCard from "@/components/EventCard";
-
-const events = [
-    {image:"/images/event1.png",title:"event 1"},
-    {image:"/images/event2.png",title:"event 2"},
-];
+import events from "@/lib/constants";
 
 const Page = () => {
     return (
@@ -17,7 +13,7 @@ const Page = () => {
             <div className="mt-20 space-y-7">
                 <h3>Featured Events</h3>
 
-                <ul className="events">
+                <ul className="events list-none">
                     {events.map((event)=>(
                         <li key={event.title}>
                             <EventCard {...event} />
